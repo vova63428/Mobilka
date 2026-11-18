@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:TenElement.Resources"
+             x:Class="TenElement.MainPage"
+             Title="{x:Static resources:AppResources.AppTitle}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+         
+            <Label
+                Text="{x:Static resources:AppResources.LabelWelcome}"
+                FontSize="24"
+                HorizontalOptions="Center" />
+
+           
+            <Entry
+                x:Name="NameEntry"
+                Placeholder="{x:Static resources:AppResources.EntryPlaceholder}" />
+
+         
+            <Button
+                x:Name="GreetButton"
+                Text="{x:Static resources:AppResources.ButtonGreet}"
+                Clicked="OnGreetClicked" />
+
+           
+            <Label
+                x:Name="StatusLabel"
+                Text="{x:Static resources:AppResources.StatusDefault}"
+                TextColor="Gray"
+                HorizontalOptions="Center" />
+
+            
+            <HorizontalStackLayout Spacing="10">
+                <Switch x:Name="OptionSwitch" Toggled="OnSwitchToggled" />
+                <Label
+                    Text="{x:Static resources:AppResources.SwitchOption}"
+                    VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            
+            <VerticalStackLayout>
+                <Label Text="{x:Static resources:AppResources.SliderTitle}" />
+                <Slider x:Name="ValueSlider" Minimum="0" Maximum="100" Value="50" ValueChanged="OnSliderChanged" />
+            </VerticalStackLayout>
+
+           
+            <VerticalStackLayout>
+                <Label Text="{x:Static resources:AppResources.PickerTitle}" />
+                <Picker x:Name="ItemPicker" SelectedIndexChanged="OnPickerChanged" />
+            </VerticalStackLayout>
+
+            
+            <VerticalStackLayout>
+                <Label Text="{x:Static resources:AppResources.DateTitle}" />
+                <DatePicker x:Name="DateSelector" />
+            </VerticalStackLayout>
+
+          
+            <VerticalStackLayout>
+                <Label Text="{x:Static resources:AppResources.StepperTitle}" />
+                <Stepper x:Name="QuantityStepper" Minimum="0" Maximum="10" Increment="1" />
+            </VerticalStackLayout>
+
+           
+            <Button
+                x:Name="CounterButton"
+                Text="{x:Static resources:AppResources.ButtonCounter}"
+                Clicked="OnCounterClicked" />
+
+   
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,20" />
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                <Button Text="RU" Clicked="OnSwitchToRussian" />
+                <Button Text="ES" Clicked="OnSwitchToSpanish" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
